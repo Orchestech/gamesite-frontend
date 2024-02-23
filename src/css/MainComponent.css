@@ -1,0 +1,116 @@
+.main-block {
+  background-image: radial-gradient(circle, #252424, #2f2927, #362e27, #3a3528, #393d2b, #384432, #374a3c, #365146, #3b5752, #435d5c, #4d6366, #58696e);
+}
+
+.main-block .main-block__gif {
+  background: #000 url(../img/UgwL.gif) center;
+  border-radius: 10px;
+}
+
+.main-block .main-block__gif h1 {
+  padding: 200px 0;
+  color: #000;
+  margin: 0;
+  font-size: 50px;
+}
+
+.main-block .main-block__gif a {
+  font-weight: 700;
+  border-radius: 10px;
+  background-color: #000;
+  padding: 20px 20vw;
+  font-size: 35px;
+  color: #e6f2f1;
+}
+
+.about-game {
+  background-color: #2a272a;
+}
+
+.about-game h2 {
+  text-align: start;
+  margin: 0;
+  padding-top: 70px;
+  padding-bottom: 30px;
+  font-size: 40px;
+  color: #82a0aa;
+}
+
+.about-game .about-game__grid {
+  text-align: start;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 20px;
+}
+
+.about-game .about-game__grid .about-game__item {
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #677381;
+  margin-bottom: 20px;
+}
+
+.about-game .about-game__grid .about-game__item h3 {
+  font-size: 22px;
+}
+
+.about-game .about-game__grid .about-game__item p {
+  font-size: 18px;
+}
+
+.about-game .about-game__grid .about-game__item_first {
+  padding: 25px;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.about-game .about-game__grid .about-game__item_first h3 {
+  font-size: 25px;
+  margin-bottom: 60px;
+}
+
+.about-game .about-game__grid .about-game__item_first p {
+  font-size: 20px;
+}
+
+.about-game .about-game__grid .about-game__item_first button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: #82a0aa;
+  border: 0;
+}
+
+.beta {
+  background: #677381;
+}
+
+.beta h2 {
+  margin: 0;
+  font-size: 40px;
+  padding: 40px;
+  text-align: start;
+}
+
+.beta .beta-block {
+  background: #82a0aa;
+  text-align: start;
+  border-radius: 15px;
+}
+
+.beta .beta-block h3 {
+  padding: 40px;
+  font-size: 30px;
+}
+
+.beta .beta-block p {
+  padding: 0 40px;
+  font-size: 25px;
+}
+
+.beta .beta-block .beta-block__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 20px;
+  text-align: center;
+  margin-top: 80px;
+}

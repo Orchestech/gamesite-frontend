@@ -1,0 +1,16 @@
+.header {
+    background-color: #000000;
+    position: fixed;
+    width: 100%;
+  }
+  .header .nav__list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    min-height: 100px;
+    align-items: center;
+  }
+  .header .nav__list .nav__item {
+    color: #cdcdcd;
+    font-size: 20px;
+  }
