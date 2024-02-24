@@ -114,3 +114,15 @@
   text-align: center;
   margin-top: 80px;
 }
+
+.registration_block {
+  text-align: center;
+  color: #cdcdcd;
+}
+
+.registration_link {
+  padding: 20px 0;
+  background-color: #000000;
+  font-size: 40px;
+  border-radius: 0 0 10px 10px;
+}

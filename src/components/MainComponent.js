@@ -1,5 +1,5 @@
 import '../css/MainComponent.css';
-import * as Images from '../img/index.js';
+import * as Images from './image';
 
 function MainComponent() {
     return (
@@ -22,7 +22,6 @@ function MainComponent() {
                             <p>Разработчики не знают что это такое, да и всем, собсна, безразницы.</p>
                             <p>Тебя что-то не устраивает? Вау, ты такой оригинальный...</p>
                             <p>Оставляй комментарий и мы обязательно учтем твое мнение.</p>
-                            <button>У тебя есть мнение?</button>
                         </div>
                         <div className='about-game__item'>
                             <h3>Шикарный геймплей</h3>
@@ -51,15 +50,17 @@ function MainComponent() {
                                 <p>Есть немного свободного времени</p>
                             </div>
                             <div className='beta-block__item'>
-                                <img src='../img/pngwing.com.png' alt='' width='100px' />
+                                <img src={Images.ImgTools} alt='' width='100px' />
                                 <p>Куча инициативы к новому</p>
                             </div>
                             <div className='beta-block__item'>
-                                <img src='../img/185239-200.png' alt='' width='100px' />
+                                <img src={Images.ImgMoney} alt='' width='100px' />
                                 <p>Получаете шикарные призы</p>
                             </div>
                         </div>
-                        <p><a href='registration.html' className='nav__item'>registration</a></p>
+                        <a href='registration.html' className='registration_block'>
+                            <div className='registration_link'>Один раз живем!</div>
+                        </a>
                     </div>
                 </div>
             </article>
