@@ -6,7 +6,6 @@ function MainComponent() {
         <main>
             <article className='main-block' id='main-block'>
                 <div className='container'>
-                    <div></div>
                     <div className='main-block__gif'>
                         <h1>WRAITH WRANGLER</h1>
                         <a href=''>Играть</a>
