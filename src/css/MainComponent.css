@@ -1,6 +1,5 @@
 .main-block {
-  background-image: radial-gradient(circle, #252424, #2f2927, #362e27, #3a3528, #393d2b, #384432, #374a3c, #365146, #3b5752, #435d5c, #4d6366, #58696e);
-}
+background-image: radial-gradient(circle, #7d0707, #670226, #461330, #261728, #121212);}
 
 .main-block .main-block__gif {
   display: flex;
@@ -66,7 +65,6 @@
 
 .main-block .main-block__gif a:hover {
   background-color: #5c0000;
-  box-shadow: 0 0 30px 0px #7d0707;
   transform: scale(1.1);
   display: inline-block; /* Added */
 }
@@ -173,4 +171,14 @@
   background-color: #000000;
   font-size: 40px;
   border-radius: 0 0 10px 10px;
+}
+
+@media only screen and (max-width: 770px) {
+  .about-game .about-game__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .beta .beta-block .beta-block__grid {
+    grid-template-columns: 1fr;
+  }
 }
