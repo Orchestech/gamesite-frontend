@@ -5,11 +5,28 @@ background-image: radial-gradient(circle, #7d0707, #670226, #461330, #261728, #1
   display: flex;
   background: #000 url(../img/UgwL.gif) center;
   border-radius: 10px;
-  height: 40vh;
+  height: calc(15vw + 25vh);
   min-height: 300px;
   align-content: flex-end;
   justify-content: end;
   flex-direction: column;
+  animation-name: background-size-animation;
+  animation-duration: 18s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+
+@keyframes background-size-animation {
+  0% {
+    background-size: 130% 130%;
+  }
+  50% {
+    background-size: 150% 150%;
+  }
+  100% {
+    background-size: 130% 130%;
+  }
 }
 
 .main-block .main-block__gif h1 {
@@ -17,11 +34,35 @@ background-image: radial-gradient(circle, #7d0707, #670226, #461330, #261728, #1
   color: #000;
   margin: 0;
   font-size: calc(26px + 4vw);
-  animation-name: text-shadow-animation;
-  animation-duration: 4s;
+  animation-name: text-shadow-animation, text-size-animation;
+  animation-duration: 10s;
   animation-iteration-count: infinite;
-  transition-duration: 0.3s;
+  transition-duration: 0.8s;
   margin-bottom: 6vh;
+}
+
+@keyframes text-size-animation {
+  0% {
+    font-size: calc(26px + 4vw);
+  }
+  58% {
+    font-size: calc(26px + 4vw);
+  }
+  62% {
+    font-size: calc(26px + 6vw);
+  }
+  66% {
+    font-size: calc(26px + 4vw);
+  }
+  70% {
+    font-size: calc(26px + 6vw);
+  }
+  74% {
+    font-size: calc(26px + 4vw);
+  }
+  100% {
+    font-size: calc(26px + 4vw);
+  }
 }
 
 @keyframes text-shadow-animation {
@@ -43,12 +84,6 @@ background-image: radial-gradient(circle, #7d0707, #670226, #461330, #261728, #1
   100% {
     text-shadow: rgb(160, 30, 16) 4px 4px 10px;
   }
-}
-
-.main-block .main-block__gif h1:hover {
-  transform: scale(1.2);
-  text-shadow: rgb(224, 36, 15) 2px 2px 5px 6px;
-  
 }
 
 .main-block .main-block__gif a {
@@ -78,7 +113,7 @@ background-image: radial-gradient(circle, #7d0707, #670226, #461330, #261728, #1
   margin: 0;
   padding-top: 70px;
   padding-bottom: 30px;
-  font-size: 40px;
+  font-size: calc(16px + 4vw);
   color: #82a0aa;
 }
 
@@ -132,7 +167,7 @@ background-image: radial-gradient(circle, #7d0707, #670226, #461330, #261728, #1
 
 .beta h2 {
   margin: 0;
-  font-size: 40px;
+  font-size: calc(26px + 3vw);
   padding: 40px;
   text-align: start;
 }
@@ -174,6 +209,10 @@ background-image: radial-gradient(circle, #7d0707, #670226, #461330, #261728, #1
 }
 
 @media only screen and (max-width: 770px) {
+  .main-block .main-block__gif {
+    height: calc(5vw + 10vh);
+  }
+
   .about-game .about-game__grid {
     grid-template-columns: 1fr;
   }

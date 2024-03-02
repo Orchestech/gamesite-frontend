@@ -20,12 +20,12 @@
 
 .header .nav__list .nav__item:hover {
   color: #b82727;
-  transition-duration: 0.5s;
+  transition-duration: 0.8s;
 }
 
 .header .nav__list li:hover {
   color: #b82727;
-  transition-duration: 0.5s;
+  transition-duration: 0.8s;
   font-size: 40px;
 }
 
