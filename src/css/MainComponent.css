@@ -1,12 +1,12 @@
 .main-block {
-background-image: radial-gradient(circle, #7d0707, #670226, #461330, #261728, #121212);}
-
+  background-image: linear-gradient(to bottom, #000000, #1c060b, #2c0a11, #3e0713, #500213);}
 .main-block .main-block__gif {
   display: flex;
-  background: #000 url(../img/UgwL.gif) center;
+  background: url(../img/UgwL.gif) center;
   border-radius: 10px;
   height: calc(15vw + 25vh);
   min-height: 300px;
+  max-height: 550px;
   align-content: flex-end;
   justify-content: end;
   flex-direction: column;
@@ -14,6 +14,7 @@ background-image: radial-gradient(circle, #7d0707, #670226, #461330, #261728, #1
   animation-duration: 18s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
+  filter: brightness(0.8)
 }
 
 
@@ -33,7 +34,6 @@ background-image: radial-gradient(circle, #7d0707, #670226, #461330, #261728, #1
   font-family: "Kode Mono", monospace;
   color: #000;
   margin: 0;
-  font-size: calc(26px + 4vw);
   animation-name: text-shadow-animation, text-size-animation;
   animation-duration: 10s;
   animation-iteration-count: infinite;
@@ -43,25 +43,25 @@ background-image: radial-gradient(circle, #7d0707, #670226, #461330, #261728, #1
 
 @keyframes text-size-animation {
   0% {
-    font-size: calc(26px + 4vw);
+    font-size: calc(26px + 2vh + 2vw);
   }
   58% {
-    font-size: calc(26px + 4vw);
+    font-size: calc(26px + 2vh + 2vw);
   }
   62% {
-    font-size: calc(26px + 6vw);
+    font-size: calc(26px + 3vh + 2vw);
   }
   66% {
-    font-size: calc(26px + 4vw);
+    font-size: calc(26px + 2vh + 2vw);
   }
   70% {
-    font-size: calc(26px + 6vw);
+    font-size: calc(26px + 3vh + 2vw);
   }
   74% {
-    font-size: calc(26px + 4vw);
+    font-size: calc(26px + 2vh + 2vw);
   }
   100% {
-    font-size: calc(26px + 4vw);
+    font-size: calc(26px + 2vh + 2vw);
   }
 }
 
@@ -105,7 +105,8 @@ background-image: radial-gradient(circle, #7d0707, #670226, #461330, #261728, #1
 }
 
 .about-game {
-  background-color: #2a272a;
+  color: #e2dbda;
+  background-color: #500213;
 }
 
 .about-game h2 {
@@ -113,8 +114,7 @@ background-image: radial-gradient(circle, #7d0707, #670226, #461330, #261728, #1
   margin: 0;
   padding-top: 70px;
   padding-bottom: 30px;
-  font-size: calc(16px + 4vw);
-  color: #82a0aa;
+  font-size: calc(16px + 3vh);
 }
 
 .about-game .about-game__grid {
@@ -127,7 +127,8 @@ background-image: radial-gradient(circle, #7d0707, #670226, #461330, #261728, #1
 .about-game .about-game__grid .about-game__item {
   padding: 20px;
   border-radius: 10px;
-  background-color: #677381;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 2px solid #2b0009;
   margin-bottom: 20px;
 }
 
@@ -162,18 +163,20 @@ background-image: radial-gradient(circle, #7d0707, #670226, #461330, #261728, #1
 }
 
 .beta {
-  background: #677381;
+  background-image: linear-gradient(to bottom, #500213, #7c4155, #a07d95, #c7bccd, #fbfbfd);
+  color: #ffffff;
 }
 
 .beta h2 {
   margin: 0;
-  font-size: calc(26px + 3vw);
+  font-size: calc(16px + 3vh);
   padding: 40px;
   text-align: start;
 }
 
 .beta .beta-block {
-  background: #82a0aa;
+  background-color: rgba(53, 10, 10, 0.26);
+  border: 2px solid #2b0009;
   text-align: start;
   border-radius: 15px;
 }
@@ -211,6 +214,30 @@ background-image: radial-gradient(circle, #7d0707, #670226, #461330, #261728, #1
 @media only screen and (max-width: 770px) {
   .main-block .main-block__gif {
     height: calc(5vw + 10vh);
+  }
+
+  @keyframes text-size-animation {
+    0% {
+      font-size: calc(26px + 3vw);
+    }
+    58% {
+      font-size: calc(26px + 3vw);
+    }
+    62% {
+      font-size: calc(26px + 4vw);
+    }
+    66% {
+      font-size: calc(26px + 3vw);
+    }
+    70% {
+      font-size: calc(26px + 4vw);
+    }
+    74% {
+      font-size: calc(26px + 3vw);
+    }
+    100% {
+      font-size: calc(26px + 3vw);
+    }
   }
 
   .about-game .about-game__grid {
