@@ -1,10 +1,11 @@
 .header {
   scroll-behavior: smooth;
   background-color: #000000;
-  position: fixed;
   width: 100%;
   z-index: 1;
+  position: fixed;
 }
+
 .header .nav__list {
   display: flex;
   justify-content: space-around;
@@ -13,20 +14,14 @@
   align-items: center;
 }
 
-.header .nav__list .nav__item {
+.header .nav__list .nav__item, a{
   color: #cdcdcd;
   font-size: 30px;
 }
 
-.header .nav__list .nav__item:hover {
+.header .nav__list .nav__item:hover, a:hover {
   color: #b82727;
   transition-duration: 0.8s;
-}
-
-.header .nav__list li:hover {
-  color: #b82727;
-  transition-duration: 0.8s;
-  font-size: 40px;
 }
 
 @media only screen and (max-width: 770px) {
