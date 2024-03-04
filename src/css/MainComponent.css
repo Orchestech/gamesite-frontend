@@ -99,7 +99,7 @@
 }
 
 .main-block .main-block__gif a:hover {
-  background-color: #5c0000;
+  background-color: #3c0000;
   transform: scale(1.1);
   display: inline-block; /* Added */
 }
