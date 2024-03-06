@@ -116,7 +116,7 @@
   margin: 0;
   padding-top: 70px;
   padding-bottom: 30px;
-  font-size: calc(16px + 3vh);
+  font-size: calc(16px + 2vh);
 }
 
 .about-game .about-game__grid {
@@ -172,7 +172,7 @@
 
 .beta h2 {
   margin: 0;
-  font-size: calc(16px + 3vh);
+  font-size: calc(16px + 2vh);
   padding: 40px;
   text-align: start;
 }
@@ -214,9 +214,9 @@
   border-radius: 0 0 10px 10px;
 }
 
-@media only screen and (max-width: 770px) {
+@media screen and (max-width: 770px) {
   .main-block .main-block__gif {
-    height: calc(5vw + 10vh);
+    min-height: calc(40px + 13vw + 13vh);
   }
 
   @keyframes text-size-animation {

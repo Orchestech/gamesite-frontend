@@ -19,6 +19,13 @@
   font-size: 30px;
 }
 
+.sign_or_log_in {
+  border: #691a1a solid 3px;
+  border-radius: 10px;
+  padding: 4px 6px;
+}
+
+
 .header .nav__list .nav__item:hover, a:hover {
   color: #b82727;
   transition-duration: 0.8s;

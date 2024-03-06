@@ -12,7 +12,11 @@ function HeaderComponent() {
                             <li className='nav__item'><Link to={'/'}>Wraith Wrangler</Link></li>
                             <li className='nav__item'><a href='#about-game'>What is it?</a></li>
                             <li className='nav__item'><a href='#beta'>Beta</a></li>
-                            <li className='nav__item'><Link to={'/log_in'}>Log in</Link></li>
+                            <li className='nav__item sign_or_log_in'>
+                                <Link to={'/log_in'}>Log in</Link>
+                                <span style={{color: 'white'}}>/</span>
+                                <Link to={'/sign_up'}>Sign up</Link>
+                            </li>
                         </ul>
                     </nav>
                 </div>
