@@ -136,6 +136,7 @@
 
 .about-game .about-game__grid .about-game__item h3 {
   font-size: 22px;
+  margin-bottom: 20px;
 }
 
 .about-game .about-game__grid .about-game__item p {
@@ -150,7 +151,7 @@
 
 .about-game .about-game__grid .about-game__item_first h3 {
   font-size: 25px;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 .about-game .about-game__grid .about-game__item_first p {
