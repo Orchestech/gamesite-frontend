@@ -1,41 +1,76 @@
 import React, { useState } from 'react';
 import '../css/LogInComponent.css';
+import { TextField, FormControl, Button } from "@mui/material";
+import { Link } from "react-router-dom"
 
 const LogInComponent = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [emailError, setEmailError] = useState(false);
+    const [passwordError, setPasswordError] = useState(false);
 
-    const handleEmailChange = (e) => {
-        setEmail(e.target.value);
-    };
+    const handleSubmit = (event) => {
+        event.preventDefault();
 
-    const handlePasswordChange = (e) => {
-        setPassword(e.target.value);
-    };
+        setEmailError(false);
+        setPasswordError(false);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Здесь можно добавить логику для отправки данных на сервер и проверки введенных данных
-        console.log('Email:', email);
-        console.log('Password:', password);
-    };
+        if (email === '') {
+            setEmailError(true);
+        }
+        if (password === '') {
+            setPasswordError(true);
+        }
+        if (email && password) {
+            console.log(email, password)
+        }
+    }
 
     return (
-        <div className='log_in'>
-            <h2>Log In</h2>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label>Email:</label>
-                    <input type="email" value={email} onChange={handleEmailChange} />
-                </div>
-                <div>
-                    <label>Password:</label>
-                    <input type="password" value={password} onChange={handlePasswordChange} />
-                </div>
-                <button type="submit">Log In</button>
-            </form>
+        <div className='log_in_container'>
+            <div className='log_in'>
+                <h2>Log In Form</h2>
+                
+                <form autoComplete='off' onSubmit={handleSubmit}>
+                    <TextField
+                        label="Email"
+                        onChange={e => setEmail(e.target.value)}
+                        required
+                        variant="outlined"
+                        color="warning"
+                        type="email"
+                        sx={{mb: 3}}
+                        fullWidth
+                        value={email}
+                        error={emailError}
+                        className={emailError ? 'error' : ''}
+                    />
+                    <TextField
+                        label="Password"
+                        onChange={e => setPassword(e.target.value)}
+                        required
+                        variant="outlined"
+                        color="warning"
+                        type="password"
+                        value={password}
+                        error={passwordError}
+                        fullWidth
+                        sx={{mb: 3}}
+                        className={passwordError ? 'error' : ''}
+                    />
+                    <Button
+                        type='submit'
+                        variant='contained'
+                        className='log_in_button'
+                        sx={{ backgroundColor: '#58363d', color: 'white', paddingX: 10, marginBottom: 3}} // Change the background color and text color here
+                    >
+                        Log In
+                    </Button>
+                </form>
+                <small>Need an account? <Link to="/sign_up" className='register_link'>Register here</Link></small>
+            </div>
         </div>
     );
-};
+}
 
 export default LogInComponent;

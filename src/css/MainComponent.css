@@ -1,6 +1,5 @@
 .main-block {
   background-image: linear-gradient(to bottom, #000000, #1c060b, #2c0a11, #3e0713, #500213);
-  padding-top: 100px;
 }
 .main-block .main-block__gif {
   display: flex;

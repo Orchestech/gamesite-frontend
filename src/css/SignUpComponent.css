@@ -1,14 +1,15 @@
-.log_in_container {
-    padding-top: 150px;
+.sign_up_container {
+    position: relative;
     text-align: center;
     background-image: linear-gradient(to bottom, #500213, #7c4155, #a07d95, #c7bccd, #fbfbfd);
     color: #ffffff;
+    height: 550px;
     min-height: calc(100vh - 183.2px);
     display: grid;
     grid-template-rows: auto 1fr auto;
 }
 
-.log_in {
+.sign_up {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -19,7 +20,7 @@
     padding: 20px;
 }
 
-.log_in h2 {
+.sign_up h2 {
     font-size: calc(10px + 2vh);
     margin-bottom: 20px;
 }

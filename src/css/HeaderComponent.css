@@ -1,9 +1,9 @@
 .header {
-  scroll-behavior: smooth;
   background-color: #000000;
   width: 100%;
   z-index: 1;
-  position: fixed;
+  position: sticky;
+  top: 0;
 }
 
 .header .nav__list {
