@@ -62,6 +62,7 @@ const LogInComponent = () => {
                         type='submit'
                         variant='contained'
                         className='log_in_button'
+                        color='warning'
                         sx={{ backgroundColor: '#58363d', color: 'white', paddingX: 10, marginBottom: 3}} // Change the background color and text color here
                     >
                         Log In

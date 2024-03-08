@@ -19,7 +19,7 @@ const SignUpComponent = () => {
         <div className='sign_up_container'>
             <div className='sign_up'>
                 <h2>Register Form</h2>
-                <form onSubmit={handleSubmit} action={<Link to="/login" />}>
+                <form onSubmit={handleSubmit}>
                     <Stack spacing={2} direction="row" sx={{marginBottom: 3}}>
                         <TextField
                             type="text"
@@ -79,6 +79,7 @@ const SignUpComponent = () => {
                     <Button type='submit'
                         variant='contained'
                         className='log_in_button'
+                        color='warning'
                         sx={{ backgroundColor: '#58363d', color: 'white', paddingX: 10, marginBottom: 3}}>Register</Button>
                 </form>
                 <small>Already have an account? <Link to="/log_in" className='register_link'>Login Here</Link></small>

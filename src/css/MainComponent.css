@@ -167,6 +167,7 @@
 .beta {
   background-image: linear-gradient(to bottom, #500213, #7c4155, #a07d95, #c7bccd, #fbfbfd);
   color: #ffffff;
+  margin-bottom: 50px;
 }
 
 .beta h2 {
@@ -199,6 +200,7 @@
   grid-column-gap: 20px;
   text-align: center;
   margin-top: 80px;
+  margin-bottom: 50px;
 }
 
 .registration_block {

@@ -1,6 +1,7 @@
 
 import '../css/HeaderComponent.css';
 import { Link } from 'react-router-dom';
+import ImgTime from '../img/лого.svg';
 
 function HeaderComponent() {
     return (
@@ -9,7 +10,7 @@ function HeaderComponent() {
                 <div className='container'>
                     <nav className='nav'>
                         <ul className='nav__list'>
-                            <li className='nav__item'><Link to={'/'}>Wraith Wrangler</Link></li>
+                            <li className='nav__item'><Link to={'/'}><img src={ImgTime} alt='' width='100px' /></Link></li>
                             <li className='nav__item'><a href='#about-game'>What is it?</a></li>
                             <li className='nav__item'><a href='#beta'>Beta</a></li>
                             <li className='nav__item sign_or_log_in'>

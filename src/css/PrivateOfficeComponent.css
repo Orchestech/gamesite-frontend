@@ -1,0 +1,32 @@
+.private_office_container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-image: linear-gradient(to bottom, #500213, #7c4155, #a07d95, #c7bccd, #fbfbfd);
+    color: #ffffff;
+    min-height: calc(100vh - 233.2px);
+    margin: 0 auto;
+    width: 100%;
+}
+
+.private_office {
+    background-color: rgba(60, 10, 10, 0.26);
+    border: 2px solid #583636;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 50px 0;
+}
+
+.private_office h2 {
+    font-size: calc(10px + 2vh);
+    margin-bottom: 20px;
+}
+
+.new_password_button {
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px 0;
+    padding: 10px 20px;
+}
