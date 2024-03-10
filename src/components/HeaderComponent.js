@@ -11,8 +11,8 @@ function HeaderComponent() {
                     <nav className='nav'>
                         <ul className='nav__list'>
                             <li className='nav__item'><Link to={'/'}><img src={ImgTime} alt='' width='100px' /></Link></li>
-                            <li className='nav__item'><a href='#about-game'>What is it?</a></li>
-                            <li className='nav__item'><a href='#beta'>Beta</a></li>
+                            <li className='nav__item'><a href='#about-game'>Что это?</a></li>
+                            <li className='nav__item'><a href='#beta'>Бета</a></li>
                             <li className='nav__item sign_or_log_in'>
                                 <Link to={'/log_in'}>Log in</Link>
                                 <span style={{color: 'white'}}>/</span>

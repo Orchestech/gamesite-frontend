@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     text-align: center;
-    background-image: linear-gradient(to bottom, #500213, #7c4155, #a07d95, #c7bccd, #fbfbfd);
+    background-image: linear-gradient(to bottom, #000000, #1c060b, #2c0a11, #3e0713, #500213);
     color: #ffffff;
     min-height: calc(100vh - 233.2px);
     margin: 0 auto;
@@ -11,22 +11,33 @@
 
 .private_office {
     background-color: rgba(60, 10, 10, 0.26);
-    border: 2px solid #583636;
+    border: 2px solid #000000;
     border-radius: 15px;
     padding: 20px;
     margin: 50px 0;
 }
 
-.private_office h2 {
+.private_office_title {
     font-size: calc(10px + 2vh);
     margin-bottom: 20px;
 }
 
 .new_password_button {
     border: none;
-    color: #ffffff;
+    color: #000000;
     cursor: pointer;
     font-size: 16px;
-    margin: 10px 0;
+    margin: 200px 0;
     padding: 10px 20px;
+}
+
+.beta_title {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.beta_status {
+    font-size: 20px;
+    margin: 20px 10px;
+    color: #500213;
 }

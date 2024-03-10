@@ -4,6 +4,7 @@
   z-index: 1;
   position: sticky;
   top: 0;
+  font-family: "Pixelify Sans", sans-serif;
 }
 
 .header .nav__list {
@@ -16,7 +17,7 @@
 
 .header .nav__list .nav__item, a{
   color: #cdcdcd;
-  font-size: 30px;
+  font-size: 40px;
 }
 
 .sign_or_log_in {

@@ -1,7 +1,7 @@
 .sign_up_container {
     position: relative;
     text-align: center;
-    background-image: linear-gradient(to bottom, #500213, #7c4155, #a07d95, #c7bccd, #fbfbfd);
+    background-image: linear-gradient(to bottom, #000000, #1c060b, #2c0a11, #3e0713, #500213);
     color: #ffffff;
     height: 550px;
     min-height: calc(100vh - 183.2px);

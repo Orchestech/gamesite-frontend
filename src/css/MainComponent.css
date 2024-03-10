@@ -116,6 +116,7 @@
   padding-top: 70px;
   padding-bottom: 30px;
   font-size: calc(16px + 2vh);
+  font-family: "Pixelify Sans", sans-serif;
 }
 
 .about-game .about-game__grid {
@@ -134,8 +135,9 @@
 }
 
 .about-game .about-game__grid .about-game__item h3 {
-  font-size: 22px;
+  font-size: 42px;
   margin-bottom: 20px;
+  font-family: "Pixelify Sans", sans-serif;
 }
 
 .about-game .about-game__grid .about-game__item p {
@@ -149,8 +151,9 @@
 }
 
 .about-game .about-game__grid .about-game__item_first h3 {
-  font-size: 25px;
+  font-size: 45px;
   margin-bottom: 40px;
+  font-family: "Pixelify Sans", sans-serif;
 }
 
 .about-game .about-game__grid .about-game__item_first p {
@@ -165,9 +168,8 @@
 }
 
 .beta {
-  background-image: linear-gradient(to bottom, #500213, #7c4155, #a07d95, #c7bccd, #fbfbfd);
-  color: #ffffff;
-  margin-bottom: 50px;
+  background-image: linear-gradient(to bottom, #500213, #3e0713, #2c0a11, #1c060b, #000000);
+  color: #d6caca;
 }
 
 .beta h2 {
@@ -180,6 +182,7 @@
 .beta .beta-block {
   background-color: rgba(53, 10, 10, 0.26);
   border: 2px solid #2b0009;
+  border-bottom: 0;
   text-align: start;
   border-radius: 15px;
 }
@@ -213,6 +216,28 @@
   background-color: #000000;
   font-size: 40px;
   border-radius: 0 0 10px 10px;
+  transition-duration: 0.6s;
+}
+
+.registration_link:hover {
+  color: #ffffff;
+  background-color: #3c0000;
+  transform: scale(1.1);
+  border-radius: 10px;
+  animation: glowing 2s infinite;
+  font-weight: 600;
+}
+
+@keyframes glowing {
+  0% {
+    box-shadow: 0 0 5px #fff;
+  }
+  50% {
+    box-shadow: 0 0 20px #ff0000, 0 0 40px #ff0000;
+  }
+  100% {
+    box-shadow: 0 0 5px #fff;
+  }
 }
 
 @media screen and (max-width: 770px) {
