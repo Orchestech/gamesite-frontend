@@ -1,5 +1,6 @@
 import '../css/MainComponent.css';
 import * as Images from './image';
+import { Link } from 'react-router-dom';
 
 function MainComponent() {
     return (
@@ -19,15 +20,19 @@ function MainComponent() {
                         <div className='about-game__item about-game__item_first'>
                             <h3>Стреляй</h3>
                             <p>Это твой единственный шанс на победу.</p>
+                            <p>Толпы врагов уже так и рвутся к тебе!</p>
+                            <p>Сделай все, что бы противостоять им.</p>
+                            <p></p>
                         </div>
                         <div className='about-game__item'>
                             <h3>Живи</h3>
-                            <p>Помни, ты не бессмертен.</p>
+                            <p>Помни, ты не бессмертен, как и твои враги.</p>
                             <p>Удастся ли тебе уцелеть?</p>
                         </div>
                         <div className='about-game__item'>
                             <h3>Спасайся</h3>
                             <p>Опасности подстерегают тебя на каждом шагу.</p>
+                            <p>Не забывай поглядывать заспину.</p>
                         </div>
                     </div>
                 </div>
@@ -37,8 +42,8 @@ function MainComponent() {
                     <h2>У нас проходит бета-тестирование!</h2>
                     <div className='beta-block'>
                         <h3>Шагнешь во тьму?</h3>
-                        <p>Это вполне реализуемо!</p>
-                        <p>Подавай заявку на тестирование, в течение 2-ух лет мы рассмотрим ее и обязательно пришлем ключик.</p>
+                        <p>Нам нужны такие смельчаки как ты!</p>
+                        <p>Подавай заявку на тестирование, в течение 2-ух недель мы рассмотрим ее и обязательно пришлем ключик.</p>
                         <p>Вы тестер?</p>
                         <div className='beta-block__grid'>
                             <div className='beta-block__item'>
@@ -54,9 +59,9 @@ function MainComponent() {
                                 <p>Получаете шикарные призы</p>
                             </div>
                         </div>
-                        <a href='registration.html' className='registration_block'>
-                            <div className='registration_link'>Один раз живем!</div>
-                        </a>
+                        <Link to='sign_up' className='registration_block'>
+                            <div className='registration_link'>Действуй!</div>
+                        </Link>
                     </div>
                 </div>
             </article>

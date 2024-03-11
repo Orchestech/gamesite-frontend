@@ -115,8 +115,9 @@
   margin: 0;
   padding-top: 70px;
   padding-bottom: 30px;
-  font-size: calc(16px + 2vh);
-  font-family: "Pixelify Sans", sans-serif;
+  font-size: calc(16px + 4vh);
+  font-family: "Handjet", sans-serif;
+  font-weight: 600;
 }
 
 .about-game .about-game__grid {
@@ -135,13 +136,15 @@
 }
 
 .about-game .about-game__grid .about-game__item h3 {
-  font-size: 42px;
+  font-size: 55px;
   margin-bottom: 20px;
-  font-family: "Pixelify Sans", sans-serif;
+  font-family: "Handjet", sans-serif;
+  font-weight: 600;
 }
 
 .about-game .about-game__grid .about-game__item p {
-  font-size: 18px;
+  margin: 10px 0;
+  font-size: 24px;
 }
 
 .about-game .about-game__grid .about-game__item_first {
@@ -151,13 +154,15 @@
 }
 
 .about-game .about-game__grid .about-game__item_first h3 {
-  font-size: 45px;
+  font-size: 55px;
   margin-bottom: 40px;
-  font-family: "Pixelify Sans", sans-serif;
+  font-family: "Handjet", sans-serif;
+  font-weight: 600;
 }
 
 .about-game .about-game__grid .about-game__item_first p {
-  font-size: 20px;
+  font-size: 28px;
+  margin: 20px 0;
 }
 
 .about-game .about-game__grid .about-game__item_first button {
@@ -174,9 +179,11 @@
 
 .beta h2 {
   margin: 0;
-  font-size: calc(16px + 2vh);
+  font-size: calc(16px + 4vh);
   padding: 40px;
   text-align: start;
+  font-family: "Handjet", sans-serif;
+  font-weight: 600;
 }
 
 .beta .beta-block {
@@ -189,7 +196,9 @@
 
 .beta .beta-block h3 {
   padding: 40px;
-  font-size: 30px;
+  font-size: 55px;
+  font-family: "Handjet", sans-serif;
+  font-weight: 600;
 }
 
 .beta .beta-block p {

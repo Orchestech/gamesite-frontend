@@ -4,7 +4,8 @@
   z-index: 1;
   position: sticky;
   top: 0;
-  font-family: "Pixelify Sans", sans-serif;
+  font-family: "Handjet", sans-serif;
+  font-weight: 500;
 }
 
 .header .nav__list {
@@ -17,7 +18,7 @@
 
 .header .nav__list .nav__item, a{
   color: #cdcdcd;
-  font-size: 40px;
+  font-size: 50px;
 }
 
 .sign_or_log_in {
