@@ -3,6 +3,8 @@ import '../css/LogInComponent.css';
 import { TextField, FormControl, Button } from "@mui/material";
 import { Link } from "react-router-dom"
 
+
+
 const LogInComponent = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -10,19 +12,19 @@ const LogInComponent = () => {
     const [passwordError, setPasswordError] = useState(false);
 
     const handleSubmit = (event) => {
-        event.preventDefault();
-
         setEmailError(false);
         setPasswordError(false);
-
+    
         if (email === '') {
             setEmailError(true);
+            event.preventDefault();
         }
         if (password === '') {
             setPasswordError(true);
+            event.preventDefault();
         }
         if (email && password) {
-            console.log(email, password)
+            console.log(email, password);
         }
     }
 
@@ -32,14 +34,36 @@ const LogInComponent = () => {
                 <h2>Log In Form</h2>
                 
                 <form autoComplete='off' onSubmit={handleSubmit}>
-                    <TextField
+                    <TextField 
                         label="Email"
                         onChange={e => setEmail(e.target.value)}
-                        required
                         variant="outlined"
                         color="warning"
                         type="email"
-                        sx={{mb: 3}}
+                        sx={{
+                            mb: 3,
+                            '& .MuiOutlinedInput-root': {
+                                '& fieldset': {
+                                    borderColor: '#e2dbda', // Замените 'desiredColor' на цвет, который вы хотите использовать
+                                },
+                                '&:hover fieldset': {
+                                    borderColor: '#e2dbda', // Замените 'desiredColor' на цвет, который вы хотите использовать
+                                },
+                                '&.Mui-focused fieldset': {
+                                    borderColor: '#e2dbda', // Замените 'desiredColor' на цвет, который вы хотите использовать
+                                },
+                            },
+                        }}
+                        InputLabelProps={{
+                            style: {
+                                color: '#e2dbda', // Замените 'yourColor' на цвет, который вы хотите использовать
+                            },
+                        }}
+                        InputProps={{
+                            style: {
+                                color: '#e2dbda', // Здесь мы устанавливаем цвет текста на белый
+                            },
+                        }}
                         fullWidth
                         value={email}
                         error={emailError}
@@ -55,8 +79,31 @@ const LogInComponent = () => {
                         value={password}
                         error={passwordError}
                         fullWidth
-                        sx={{mb: 3}}
+                        sx={{
+                            mb: 3,
+                            '& .MuiOutlinedInput-root': {
+                                '& fieldset': {
+                                    borderColor: '#e2dbda', // Замените 'desiredColor' на цвет, который вы хотите использовать
+                                },
+                                '&:hover fieldset': {
+                                    borderColor: '#e2dbda', // Замените 'desiredColor' на цвет, который вы хотите использовать
+                                },
+                                '&.Mui-focused fieldset': {
+                                    borderColor: '#e2dbda', // Замените 'desiredColor' на цвет, который вы хотите использовать
+                                },
+                            },
+                        }}
+                        InputLabelProps={{
+                            style: {
+                                color: 'white', // Замените 'yourColor' на цвет, который вы хотите использовать
+                            },
+                        }}
                         className={passwordError ? 'error' : ''}
+                        InputProps={{
+                            style: {
+                                color: '#e2dbda', // Здесь мы устанавливаем цвет текста на белый
+                            },
+                        }}
                     />
                     <Button
                         type='submit'
@@ -68,7 +115,7 @@ const LogInComponent = () => {
                         Log In
                     </Button>
                 </form>
-                <small>Need an account? <Link to="/sign_up" className='register_link'>Register here</Link></small>
+                <small>Need an account? <Link to="/sign_up"> <span className='register_link'>Register here</span></Link></small>
             </div>
         </div>
     );
