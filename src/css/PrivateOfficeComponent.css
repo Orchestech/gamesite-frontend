@@ -3,15 +3,15 @@
     justify-content: center;
     text-align: center;
     background-image: linear-gradient(to bottom, #000000, #1c060b, #2c0a11, #3e0713, #500213);
-    color: #ffffff;
+    color: #e2dbda;
     min-height: calc(100vh - 233.2px);
     margin: 0 auto;
     width: 100%;
 }
 
 .private_office {
-    background-color: rgba(60, 10, 10, 0.26);
-    border: 2px solid #000000;
+    background-color: rgba(145, 46, 46, 0.26);
+    border: 2px solid #e2dbda;
     border-radius: 15px;
     padding: 20px;
     margin: 50px 0;
@@ -24,7 +24,7 @@
 
 .new_password_button {
     border: none;
-    color: #000000;
+    color: #e2dbda;
     cursor: pointer;
     font-size: 16px;
     margin: 200px 0;
@@ -39,5 +39,5 @@
 .beta_status {
     font-size: 20px;
     margin: 20px 10px;
-    color: #500213;
+    color: #ffffff;
 }

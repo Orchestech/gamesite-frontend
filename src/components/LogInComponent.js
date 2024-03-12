@@ -95,7 +95,7 @@ const LogInComponent = () => {
                         }}
                         InputLabelProps={{
                             style: {
-                                color: 'white', // Замените 'yourColor' на цвет, который вы хотите использовать
+                                color: '#e2dbda', // Замените 'yourColor' на цвет, который вы хотите использовать
                             },
                         }}
                         className={passwordError ? 'error' : ''}

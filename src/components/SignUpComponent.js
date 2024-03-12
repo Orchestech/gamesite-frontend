@@ -14,7 +14,34 @@ const SignUpComponent = () => {
         event.preventDefault();
         console.log(firstName, lastName, email, password) 
     }
- 
+
+    const inputStyles = {
+        mb: 3,
+        '& .MuiOutlinedInput-root': {
+            '& fieldset': {
+                borderColor: '#e2dbda', // Замените 'desiredColor' на цвет, который вы хотите использовать
+            },
+            '&:hover fieldset': {
+                borderColor: '#e2dbda', // Замените 'desiredColor' на цвет, который вы хотите использовать
+            },
+            '&.Mui-focused fieldset': {
+                borderColor: '#e2dbda', // Замените 'desiredColor' на цвет, который вы хотите использовать
+            },
+        },
+    };
+
+    const labelStyles = {
+        style: {
+            color: '#e2dbda', // Замените 'yourColor' на цвет, который вы хотите использовать
+        },
+    };
+
+    const inputPropsStyles = {
+        style: {
+            color: '#e2dbda', // Здесь мы устанавливаем цвет текста на белый
+        },
+    };
+
     return (
         <div className='sign_up_container'>
             <div className='sign_up'>
@@ -30,6 +57,9 @@ const SignUpComponent = () => {
                             value={firstName}
                             fullWidth
                             required
+                            sx={inputStyles}
+                            InputLabelProps={labelStyles}
+                            InputProps={inputPropsStyles}
                         />
                         <TextField
                             type="text"
@@ -40,6 +70,9 @@ const SignUpComponent = () => {
                             value={lastName}
                             fullWidth
                             required
+                            sx={inputStyles}
+                            InputLabelProps={labelStyles}
+                            InputProps={inputPropsStyles}
                         />
                     </Stack>
                     <TextField
@@ -51,7 +84,9 @@ const SignUpComponent = () => {
                         value={email}
                         fullWidth
                         required
-                        sx={{mb: 3}}
+                        sx={inputStyles}
+                        InputLabelProps={labelStyles}
+                        InputProps={inputPropsStyles}
                     />
                     <TextField
                         type="password"
@@ -62,7 +97,9 @@ const SignUpComponent = () => {
                         value={password}
                         required
                         fullWidth
-                        sx={{mb: 3}}
+                        sx={inputStyles}
+                        InputLabelProps={labelStyles}
+                        InputProps={inputPropsStyles}
                     />
                     <TextField
                         multiline
@@ -74,7 +111,9 @@ const SignUpComponent = () => {
                         value={resume}
                         required
                         fullWidth
-                        sx={{mb: 3}}
+                        sx={inputStyles}
+                        InputLabelProps={labelStyles}
+                        InputProps={inputPropsStyles}
                     />
                     <Button type='submit'
                         variant='contained'

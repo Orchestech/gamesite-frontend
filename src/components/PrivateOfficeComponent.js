@@ -16,6 +16,33 @@ const PrivateOfficeComponent = () => {
     const [oldPassword, setOldPassword] = useState(false);
     const [betaAccess, setbetaAccess] = useState(false);
 
+    const inputStyles = {
+        mb: 3,
+        '& .MuiOutlinedInput-root': {
+            '& fieldset': {
+                borderColor: '#e2dbda', // Замените 'desiredColor' на цвет, который вы хотите использовать
+            },
+            '&:hover fieldset': {
+                borderColor: '#e2dbda', // Замените 'desiredColor' на цвет, который вы хотите использовать
+            },
+            '&.Mui-focused fieldset': {
+                borderColor: '#e2dbda', // Замените 'desiredColor' на цвет, который вы хотите использовать
+            },
+        },
+    };
+    
+    const labelStyles = {
+        style: {
+            color: '#e2dbda', // Замените 'yourColor' на цвет, который вы хотите использовать
+        },
+    };
+    
+    const inputPropsStyles = {
+        style: {
+            color: '#e2dbda', // Здесь мы устанавливаем цвет текста на белый
+        },
+    };
+
     function handleSubmit(event) {
         event.preventDefault();
         console.log(firstName, lastName, email, password);
@@ -47,7 +74,9 @@ const PrivateOfficeComponent = () => {
                                 fullWidth
                                 required
                                 disabled={!editProfile} // Disable the input field when editProfile is false
-                                InputProps={{ style: { color: 'white' } }} // Set the text color to white
+                                sx={inputStyles}
+                                InputLabelProps={labelStyles}
+                                InputProps={inputPropsStyles}
                             />
                             <TextField
                                 type="text"
@@ -59,7 +88,9 @@ const PrivateOfficeComponent = () => {
                                 fullWidth
                                 required
                                 disabled={!editProfile} // Disable the input field when editProfile is false
-                                InputProps={{ style: { color: 'white' } }} // Set the text color to white
+                                sx={inputStyles}
+                                InputLabelProps={labelStyles}
+                                InputProps={inputPropsStyles}
                             />
                         </Stack>
                         <TextField
@@ -71,9 +102,10 @@ const PrivateOfficeComponent = () => {
                             value={email}
                             fullWidth
                             required
-                            sx={{mb: 3}}
                             disabled={true} // Disable the input field when editProfile is false
-                            InputProps={{ style: { color: 'white' } }} // Set the text color to white
+                            sx={inputStyles}
+                            InputLabelProps={labelStyles}
+                            InputProps={inputPropsStyles}
                         />
                         <TextField
                             multiline
@@ -85,9 +117,10 @@ const PrivateOfficeComponent = () => {
                             value={resume}
                             required
                             fullWidth
-                            sx={{mb: 3}}
                             disabled={!editProfile} // Disable the input field when editProfile is false
-                            InputProps={{ style: { color: 'white' } }} // Set the text color to white
+                            sx={inputStyles}
+                            InputLabelProps={labelStyles}
+                            InputProps={inputPropsStyles}
                         />
                         {editProfile ? (
                             <Button type='submit'
@@ -129,8 +162,9 @@ const PrivateOfficeComponent = () => {
                             value={password}
                             required
                             fullWidth
-                            sx={{mb: 3, mt: 3}}
-                            InputProps={{ style: { color: 'white' } }} // Set the text color to white
+                            sx={inputStyles}
+                            InputLabelProps={labelStyles}
+                            InputProps={inputPropsStyles} // Set the text color to white
                         />
                         <TextField
                             type="password"
@@ -141,8 +175,9 @@ const PrivateOfficeComponent = () => {
                             value={oldPassword}
                             required
                             fullWidth
-                            sx={{mb: 3, mt: 3}}
-                            InputProps={{ style: { color: 'white' } }} // Set the text color to white
+                            sx={inputStyles}
+                            InputLabelProps={labelStyles}
+                            InputProps={inputPropsStyles}
                         />
                         <Button type='submit'
                             variant='contained'

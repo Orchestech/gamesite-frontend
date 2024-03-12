@@ -7,6 +7,7 @@ import LogInComponent from './components/LogInComponent.js';
 import SignUpComponent from './components/SignUpComponent.js';
 import PasswordResetComponent from './components/PasswordResetComponent.js';
 import PrivateOfficeComponent from './components/PrivateOfficeComponent.js';
+import { useLocation } from 'react-router-dom';
 
 function App() {
   return (
