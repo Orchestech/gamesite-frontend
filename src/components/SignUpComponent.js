@@ -12,8 +12,31 @@ const SignUpComponent = () => {
 
     function handleSubmit(event) {
         event.preventDefault();
-        console.log(firstName, lastName, email, password) 
+        const data = {
+            username: email,
+            password: password,
+            first_name: firstName,
+            last_name: lastName,
+            resume: resume
+        };
+    
+        const baseUrl = 'http://localhost:3000/api/account/register';
+        const queryString = new URLSearchParams(data).toString();
+        const url = `${baseUrl}?${queryString}`;
+        fetch(url, {
+            method: 'POST',
+        })
+            .then(response => response.json())
+            .then(data => {
+                // Handle response from backend
+                console.log(data);
+            })
+            .catch(error => {
+                // Handle error
+                console.error(error);
+            });
     }
+
 
     const inputStyles = {
         mb: 3,

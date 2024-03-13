@@ -12,6 +12,7 @@ const LogInComponent = () => {
     const [passwordError, setPasswordError] = useState(false);
 
     const handleSubmit = (event) => {
+        event.preventDefault();
         setEmailError(false);
         setPasswordError(false);
     
@@ -23,6 +24,27 @@ const LogInComponent = () => {
             setPasswordError(true);
             event.preventDefault();
         }
+        const data = {
+            username: email,
+            password: password
+        };
+        console.log(data);
+
+        const baseUrl = 'http://localhost:3000/api/account/login';
+        const queryString = new URLSearchParams(data).toString();
+        const url = `${baseUrl}?${queryString}`;
+        fetch(url, {
+            method: 'POST',
+        })
+            .then(response => response.json())
+            .then(data => {
+                // Handle response from backend
+                console.log(data);
+            })
+            .catch(error => {
+                // Handle error
+                console.error(error);
+            });
         if (email && password) {
             console.log(email, password);
         }
@@ -106,6 +128,7 @@ const LogInComponent = () => {
                         }}
                     />
                     <Button
+                    on
                         type='submit'
                         variant='contained'
                         className='log_in_button'

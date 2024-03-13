@@ -14,16 +14,8 @@ function HeaderComponent() {
           <li className='nav__item'><a href='#beta'>Бета</a></li>
         </>
       );
-    } else if (location.pathname === '/log_in') {
-      headerContent = '';
-    } else if (location.pathname === '/sign_up') {
-      headerContent = '';
-    } else if (location.pathname === '/password_reset') {
-      headerContent = '';
-    } else if (location.pathname === '/private_office') {
-      headerContent = '';
     } else {
-      headerContent = {};
+      headerContent = '';
     }
   
     return (
