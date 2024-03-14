@@ -41,6 +41,9 @@ const LogInComponent = () => {
                 console.log(data);
                 // Store token in cookie
                 Cookies.set('token', data.token);
+                if (data.token !== undefined) {
+                    window.location.href = '/';
+                }
             })
             .catch(error => {
                 // Handle error

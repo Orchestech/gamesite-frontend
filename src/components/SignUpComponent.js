@@ -32,11 +32,15 @@ const SignUpComponent = () => {
                 // Handle response from backend
                 console.log(data);
                 Cookies.set('token', data.token);
+                if (data.token !== undefined) {
+                    window.location.href = '/';
+                }
             })
             .catch(error => {
                 // Handle error
                 console.error(error);
             });
+
     }
 
 

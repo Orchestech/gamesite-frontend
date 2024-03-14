@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '../css/PrivateOfficeComponent.css';
 import { TextField, Container, Button, Stack } from "@mui/material";
 import { Link } from "react-router-dom"
+import Cookies from 'js-cookie';
 
 const PrivateOfficeComponent = () => {
     const [firstName, setFirstName] = useState('')
@@ -14,7 +15,30 @@ const PrivateOfficeComponent = () => {
     const [savedProfile, setSavedProfile] = useState(false); // Add state for saved profile
     const [savedPassword, setSavedPassword] = useState(false);
     const [oldPassword, setOldPassword] = useState(false);
-    const [betaAccess, setbetaAccess] = useState(false);
+    const [betaAccess, setbetaAccess] = useState(false);  
+    const [verification, setVerification] = useState(true);
+
+    if (verification) {
+        setVerification(false);
+        fetch('http://localhost:3000/api/account/getProfile', {
+            method: 'GET',
+            headers: { 'token': `${Cookies.get('token')}` }
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Handle response from backend
+            console.log(data);
+            setFirstName(data.first_name);
+            setLastName(data.last_name);
+            setEmail(data.username);
+            setResume(data.resume);
+            setbetaAccess(data.betaAccess);
+        })
+        .catch(error => {
+            // Handle error
+            console.error(error);
+        });
+    }
 
     const inputStyles = {
         mb: 3,
@@ -30,17 +54,16 @@ const PrivateOfficeComponent = () => {
             },
         },
     };
-    
+
     const labelStyles = {
         style: {
-            color: '#e2dbda', // Замените 'yourColor' на цвет, который вы хотите использовать
-        },
+            color: '#e2dbda', // Replace 'yourColor' with the desired color
+        }
     };
-    
     const inputPropsStyles = {
         style: {
-            color: '#e2dbda', // Здесь мы устанавливаем цвет текста на белый
-        },
+            color: '#ffffff', // Replace '#ffffff' with the desired white color
+        }
     };
 
     function handleSubmit(event) {
