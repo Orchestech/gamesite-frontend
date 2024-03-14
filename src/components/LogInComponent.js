@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import '../css/LogInComponent.css';
 import { TextField, FormControl, Button } from "@mui/material";
-import { Link } from "react-router-dom"
-
-
+import { Link } from "react-router-dom";
+import Cookies from 'js-cookie';
 
 const LogInComponent = () => {
     const [email, setEmail] = useState('');
@@ -40,6 +39,8 @@ const LogInComponent = () => {
             .then(data => {
                 // Handle response from backend
                 console.log(data);
+                // Store token in cookie
+                Cookies.set('token', data.token);
             })
             .catch(error => {
                 // Handle error

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '../css/SignUpComponent.css';
 import { TextField, Container, Button, Stack } from "@mui/material";
 import { Link } from "react-router-dom"
+import Cookies from 'js-cookie';
 
 const SignUpComponent = () => {
     const [firstName, setFirstName] = useState('')
@@ -30,6 +31,7 @@ const SignUpComponent = () => {
             .then(data => {
                 // Handle response from backend
                 console.log(data);
+                Cookies.set('token', data.token);
             })
             .catch(error => {
                 // Handle error
