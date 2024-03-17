@@ -1,6 +1,7 @@
 import '../css/MainComponent.css';
 import * as Images from './image';
 import { Link } from 'react-router-dom';
+import Courusel from './MainCarousel';
 
 function MainComponent() {
     return (
@@ -22,7 +23,6 @@ function MainComponent() {
                             <p>Это твой единственный шанс на победу.</p>
                             <p>Толпы врагов уже так и рвутся к тебе!</p>
                             <p>Сделай все, что бы противостоять им.</p>
-                            <p></p>
                         </div>
                         <div className='about-game__item'>
                             <h3>Живи</h3>
@@ -35,6 +35,7 @@ function MainComponent() {
                             <p>Не забывай поглядывать заспину.</p>
                         </div>
                     </div>
+                    <Courusel/>
                 </div>
             </article>
             <article className='beta' id='beta'>
