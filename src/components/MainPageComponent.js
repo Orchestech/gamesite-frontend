@@ -22,6 +22,7 @@ function MainComponent() {
                             <p>Это твой единственный шанс на победу.</p>
                             <p>Толпы врагов уже так и рвутся к тебе!</p>
                             <p>Сделай все, что бы противостоять им.</p>
+                            <p></p>
                         </div>
                         <div className='about-game__item'>
                             <h3>Живи</h3>
@@ -46,15 +47,15 @@ function MainComponent() {
                         <p>Вы тестер?</p>
                         <div className='beta-block__grid'>
                             <div className='beta-block__item'>
-                                <img src={Images.ImgTime} alt=''  width='125px' height='auto' />
+                                <img src={Images.ImgTime} className={"img_pixel"} alt='' width='100px' />
                                 <p>Есть немного свободного времени</p>
                             </div>
                             <div className='beta-block__item'>
-                                <img src={Images.ImgTools} alt='' width='100px' />
+                                <img src={Images.ImgTools} className={"img_pixel"} alt='' width='100px' />
                                 <p>Куча инициативы к новому</p>
                             </div>
                             <div className='beta-block__item'>
-                                <img src={Images.ImgMoney} alt='' width='100px' />
+                                <img src={Images.ImgMoney} className={"img_pixel"} alt='' width='100px' />
                                 <p>Получаете шикарные призы</p>
                             </div>
                         </div>

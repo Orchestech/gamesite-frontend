@@ -18,6 +18,11 @@
   filter: brightness(0.8)
 }
 
+.img_pixel {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
 
 @keyframes background-size-animation {
   0% {
