@@ -1,0 +1,10 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {           
+            "env": {
+                "REACT_APP_backend_url": "http://localhost:3000" 
+            }
+        }
+    ]
+}

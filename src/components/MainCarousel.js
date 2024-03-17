@@ -34,7 +34,7 @@ function Courusel () {
     <CarouselProvider
             // Set initial slide dimensions
             naturalSlideWidth={isMobile ? 10 : 8}
-            naturalSlideHeight={isMobile ? 10 : 4}
+            naturalSlideHeight={isMobile ? 10 : 3}
             className="carousel-container" // Add a class for styling
             totalSlides={6} // The number of slides in the carousel
 
