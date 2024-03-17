@@ -7,5 +7,7 @@ import Spirit3 from "../img/Spirit_3 (2).png";
 import Spirit4 from "../img/Spirit_4.png";
 import Spirit5 from "../img/Spirit_5.png";
 import Spirit6 from "../img/Spirit_6 (3).png";
+import Person from "../img/player.png";
+import Logo from "../img//Logo.svg";
 
-export { ImgTime, ImgTools, ImgMoney, Spirit1, Spirit2, Spirit3, Spirit4, Spirit5, Spirit6};
+export { ImgTime, ImgTools, ImgMoney, Logo, Person, Spirit1, Spirit2, Spirit3, Spirit4, Spirit5, Spirit6};
