@@ -176,6 +176,17 @@ img {
   margin: 20px 0;
 }
 
+.slide h3 {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.slide p {
+  text-align: left;
+  margin-bottom: 2px;
+}
+
+
 .about-game .about-game__grid .about-game__item_first button {
   padding: 10px 20px;
   border-radius: 10px;
