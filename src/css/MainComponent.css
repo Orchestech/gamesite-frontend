@@ -3,10 +3,10 @@ img {
   image-rendering: -moz-crisp-edges;
   image-rendering: crisp-edges;
 }
-
 .main-block {
-  background-image: linear-gradient(to bottom, #000000, #1c060b, #2c0a11, #3e0713, #500213);
+  background-image: linear-gradient(to bottom, #000000, #170409, #24090f, #310912, #3e0713, #3e0713, #3e0713, #3e0713, #310912, #24090f, #170409, #000000);
 }
+
 .main-block .main-block__gif {
   display: flex;
   background: url(../img/UgwL.gif) center;
@@ -118,8 +118,6 @@ img {
 
 .about-game {
   color: #e2dbda;
-  background-color: #500213;
-  
 }
 
 .about-game h2 {
@@ -214,7 +212,6 @@ img {
 
 
 .beta {
-  background-image: linear-gradient(to bottom, #500213, #3e0713, #2c0a11, #1c060b, #000000);
   color: #d6caca;
 }
 
@@ -287,6 +284,34 @@ img {
   }
   100% {
     box-shadow: 0 0 5px #fff;
+  }
+}
+
+
+#snow {
+  background-image: url(../img/Spirit_6_background\ \(3\).png), url(../img/Spirit_1_background\ \(3\).png), url(../img/Spirit_3_background\ \(3\).png);
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+  -webkit-animation: snow 1000s linear infinite un;
+  -moz-animation: snow 1000s linear infinite;
+  -ms-animation: snow 1000s linear infinite;
+  animation: snow 1000s linear infinite;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+@keyframes snow {
+  0% {
+      background-position: 0px 0px, 0px 0px, 0px 0px;
+  }
+  100% {
+      background-position: 50000px 50000px, 10000px 20000px, -10000px 15000px;
   }
 }
 

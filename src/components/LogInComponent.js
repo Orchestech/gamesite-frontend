@@ -4,6 +4,8 @@ import { TextField, FormControl, Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import Cookies from 'js-cookie';
 
+const { REACT_APP_APIURL } = process.env;
+
 const LogInComponent = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -29,7 +31,7 @@ const LogInComponent = () => {
         };
         console.log(data);
 
-        const baseUrl = 'http://localhost:3000/api/account/login';
+        const baseUrl = `${REACT_APP_APIURL}/api/account/login`;
         const queryString = new URLSearchParams(data).toString();
         const url = `${baseUrl}?${queryString}`;
         fetch(url, {

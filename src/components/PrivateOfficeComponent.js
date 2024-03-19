@@ -4,7 +4,10 @@ import { TextField, Container, Button, Stack } from "@mui/material";
 import { Link } from "react-router-dom"
 import Cookies from 'js-cookie';
 
+const { REACT_APP_APIURL } = process.env;
+
 const PrivateOfficeComponent = () => {
+    console.log(`${process.env.REACT_APP_backend_url}/api/account/getProfile`);
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
@@ -20,7 +23,7 @@ const PrivateOfficeComponent = () => {
 
     if (verification) {
         setVerification(false);
-        fetch('http://localhost:3000/api/account/getProfile', {
+        fetch(`${REACT_APP_APIURL}/api/account/getProfile`, {
             method: 'GET',
             headers: { 'token': `${Cookies.get('token')}` }
         })

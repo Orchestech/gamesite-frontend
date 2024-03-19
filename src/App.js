@@ -7,7 +7,7 @@ import LogInComponent from './components/LogInComponent.js';
 import SignUpComponent from './components/SignUpComponent.js';
 import PasswordResetComponent from './components/PasswordResetComponent.js';
 import PrivateOfficeComponent from './components/PrivateOfficeComponent.js';
-
+import NotFound from './components/NotFound.js';
 
 function App() {
   return (
@@ -20,6 +20,7 @@ function App() {
             <Route path="/sign_up" element={<SignUpComponent />} />
             <Route path="/password_reset" element={<PasswordResetComponent />} />
             <Route path="/private_office" element={<PrivateOfficeComponent />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
           <FooterComponent />
       </Router>

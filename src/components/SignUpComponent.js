@@ -4,6 +4,8 @@ import { TextField, Container, Button, Stack } from "@mui/material";
 import { Link } from "react-router-dom"
 import Cookies from 'js-cookie';
 
+const { REACT_APP_APIURL } = process.env;
+
 const SignUpComponent = () => {
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
@@ -21,7 +23,7 @@ const SignUpComponent = () => {
             resume: resume
         };
     
-        const baseUrl = 'http://localhost:3000/api/account/register';
+        const baseUrl = `${REACT_APP_APIURL}/api/account/login`;
         const queryString = new URLSearchParams(data).toString();
         const url = `${baseUrl}?${queryString}`;
         fetch(url, {

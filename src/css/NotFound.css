@@ -1,0 +1,13 @@
+.not_found {
+    background: black;
+    color: #ffffff;
+    min-height: calc(100vh - 251px);
+    height: auto;
+}
+
+.not_found * {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
