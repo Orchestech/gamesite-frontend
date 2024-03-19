@@ -27,6 +27,20 @@
   padding: 4px 6px;
 }
 
+.naw__item-account {
+
+  border-radius: 50%;
+  padding: 6px 6px 1px 10px;
+  background-image: radial-gradient(circle, #410b0b, #410b0b, #330b0e, #000000, #000000);
+}
+.naw__item-account:hover {
+  background: radial-gradient(circle, #7f041f, #600b1f, #420e1b, #000000, #000000);
+}
+.naw__item-account:active {
+  opacity: 0.5;
+  background: radial-gradient(circle, #7f041f, #600b1f, #420e1b, #000000, #000000);
+}
+
 
 .header .nav__list .nav__item:hover, a:hover {
   color: #b82727;

@@ -23,7 +23,7 @@ function HeaderComponent() {
     }
 
     let Account = checkCookies() ? 
-    <li className='nav__item' style={{  borderRadius: '50%', padding: '6px 6px 1px 10px', background: 'radial-gradient(circle, #7f041f, #600b1f, #420e1b, #000000, #000000)' }}><Link to={'private_office'}><img src={Images.Person} alt='' width='70px' /></Link></li> 
+    <li className='nav__item naw__item-account'><Link to={'private_office'}><img src={Images.Person} alt='' width='70px' /></Link></li> 
     : 
     <li className='nav__item sign_or_log_in'>
     <Link to={'/log_in'}>Log in</Link>

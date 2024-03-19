@@ -41,3 +41,11 @@
     margin: 20px 10px;
     color: #ffffff;
 }
+
+.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input.Mui-disabled {
+    -webkit-text-fill-color: rgba(190, 173, 173, 0.595) !important;
+}
+
+.css-1sqnrkk-MuiInputBase-input-MuiOutlinedInput-input.Mui-disabled {
+    -webkit-text-fill-color: rgba(190, 173, 173, 0.595) !important;
+}

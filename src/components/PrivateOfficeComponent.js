@@ -6,6 +6,8 @@ import Cookies from 'js-cookie';
 
 const { REACT_APP_APIURL } = process.env;
 
+
+
 const PrivateOfficeComponent = () => {
     console.log(`${process.env.REACT_APP_backend_url}/api/account/getProfile`);
     const [firstName, setFirstName] = useState('')
@@ -66,13 +68,39 @@ const PrivateOfficeComponent = () => {
     const inputPropsStyles = {
         style: {
             color: '#ffffff', // Replace '#ffffff' with the desired white color
+        },
+        "& .MuiFilledInput-root": {
+            color: "#ff8800",
         }
     };
 
     function handleSubmit(event) {
         event.preventDefault();
         console.log(firstName, lastName, email, password);
-        setSavedProfile(true); // Set savedProfile state to true
+        setSavedProfile(!savedProfile); // Set savedProfile state to true
+
+        // Send data to the server
+        const baseUrl = `${REACT_APP_APIURL}/api/account/updateProfile`;
+        const queryString = new URLSearchParams(data).toString();
+        const url = `${baseUrl}?${queryString}`;
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'token': `${Cookies.get('token')}`
+            },
+            body: JSON.stringify({
+                firstName: firstName,
+                lastName: lastName,
+                email: email,
+                password: password
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Handle the response from the server
+            console.log(data);
+        })
     }
 
     function toggleForm() {
@@ -80,9 +108,9 @@ const PrivateOfficeComponent = () => {
     }
 
     function toggleEditProfile() {
-        setEditProfile(!editProfile); // Toggle the editProfile state
-        setSavedProfile(false); // Reset savedProfile state to false
+        setEditProfile(!editProfile); // Toggle the editProfile state 
     }
+
     return (
         <div className='private_office_container'>
             <div className='container'>
@@ -149,17 +177,32 @@ const PrivateOfficeComponent = () => {
                             InputProps={inputPropsStyles}
                         />
                         {editProfile ? (
-                            <Button type='submit'
-                                variant='contained'
-                                className='log_in_button'
-                                color='warning'
-                                sx={{ backgroundColor: '#58363d', color: 'white', paddingX: 10, marginBottom: 3}}
-                                disabled={savedProfile} // Disable the button when savedProfile is true
-                            >
-                                {savedProfile ? 'Profile Saved' : 'Save Profile'}
-                            </Button>
+                            savedProfile ? (
+                                <Button
+                                    type='submit'
+                                    variant='contained'
+                                    className='log_in_button'
+                                    color='warning'
+                                    sx={{ backgroundColor: '#58363d', color: 'white', paddingX: 10, marginBottom: 3}}
+                                    disabled={savedProfile} // Disable the button when savedProfile is true
+                                >
+                                    Profile Saved
+                                </Button>
+                            ) : (
+                                <Button
+                                    type='submit'
+                                    variant='contained'
+                                    className='log_in_button'
+                                    color='warning'
+                                    sx={{ backgroundColor: '#58363d', color: 'white', paddingX: 10, marginBottom: 3}}
+                                    disabled={savedProfile} // Disable the button when savedProfile is true
+                                >
+                                    Save profile
+                                </Button>
+                            )
                         ) : (
-                            <Button type='button'
+                            <Button
+                                type='button'
                                 variant='contained'
                                 className='log_in_button'
                                 color='warning'
