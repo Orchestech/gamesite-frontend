@@ -50,7 +50,7 @@ const PrivateOfficeComponent = () => {
         };
     
         // Send data to the server
-        const baseUrl = `${REACT_APP_APIURL}/api​/account​/updateProfile`;
+        const baseUrl = `${REACT_APP_APIURL}/api/account/updateProfile`;
         const queryString = new URLSearchParams(new_data).toString();
         const url = `${baseUrl}?${queryString}`;
         fetch(url, {
