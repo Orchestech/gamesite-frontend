@@ -6,10 +6,7 @@ import Cookies from 'js-cookie';
 
 const { REACT_APP_APIURL } = process.env;
 
-
-
 const PrivateOfficeComponent = () => {
-    console.log(`${process.env.REACT_APP_backend_url}/api/account/getProfile`);
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
@@ -45,6 +42,30 @@ const PrivateOfficeComponent = () => {
         });
     }
 
+    function resetData() {
+        const new_data = {
+            first_name: firstName,
+            last_name: lastName,
+            resume: resume
+        };
+    
+        // Send data to the server
+        const baseUrl = `${REACT_APP_APIURL}/api​/account​/updateProfile`;
+        const queryString = new URLSearchParams(new_data).toString();
+        const url = `${baseUrl}?${queryString}`;
+        fetch(url, {
+            method: 'PATCH',
+            headers: {
+                'token': `${Cookies.get('token')}`
+            }
+        })
+        .then(response => response.json())
+        .then(new_data => {
+            // Handle the response from the server
+            console.log(new_data);
+        })
+    }
+
     const inputStyles = {
         mb: 3,
         '& .MuiOutlinedInput-root': {
@@ -77,30 +98,7 @@ const PrivateOfficeComponent = () => {
     function handleSubmit(event) {
         event.preventDefault();
         console.log(firstName, lastName, email, password);
-        setSavedProfile(!savedProfile); // Set savedProfile state to true
 
-        // Send data to the server
-        const baseUrl = `${REACT_APP_APIURL}/api/account/updateProfile`;
-        const queryString = new URLSearchParams(data).toString();
-        const url = `${baseUrl}?${queryString}`;
-        fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'token': `${Cookies.get('token')}`
-            },
-            body: JSON.stringify({
-                firstName: firstName,
-                lastName: lastName,
-                email: email,
-                password: password
-            })
-        })
-        .then(response => response.json())
-        .then(data => {
-            // Handle the response from the server
-            console.log(data);
-        })
     }
 
     function toggleForm() {
@@ -109,6 +107,10 @@ const PrivateOfficeComponent = () => {
 
     function toggleEditProfile() {
         setEditProfile(!editProfile); // Toggle the editProfile state 
+    }
+
+    function toggleSavedProfile() {
+        setSavedProfile(!savedProfile); // Toggle the savedProfile state
     }
 
     return (
@@ -184,7 +186,7 @@ const PrivateOfficeComponent = () => {
                                     className='log_in_button'
                                     color='warning'
                                     sx={{ backgroundColor: '#58363d', color: 'white', paddingX: 10, marginBottom: 3}}
-                                    disabled={savedProfile} // Disable the button when savedProfile is true
+                                    disabled={true} // Disable the button when savedProfile is true
                                 >
                                     Profile Saved
                                 </Button>
@@ -195,7 +197,12 @@ const PrivateOfficeComponent = () => {
                                     className='log_in_button'
                                     color='warning'
                                     sx={{ backgroundColor: '#58363d', color: 'white', paddingX: 10, marginBottom: 3}}
-                                    disabled={savedProfile} // Disable the button when savedProfile is true
+                                    disabled={false} // Disable the button when savedProfile is true
+                                    onClick={() => {
+                                        toggleSavedProfile();
+                                        resetData();
+                                        toggleEditProfile();
+                                    }}
                                 >
                                     Save profile
                                 </Button>
