@@ -23,7 +23,7 @@ const SignUpComponent = () => {
             resume: resume
         };
     
-        const baseUrl = `${REACT_APP_APIURL}/api/account/login`;
+        const baseUrl = `${REACT_APP_APIURL}/api/account/register`;
         const queryString = new URLSearchParams(data).toString();
         const url = `${baseUrl}?${queryString}`;
         fetch(url, {
