@@ -42,7 +42,7 @@ const LogInComponent = () => {
                 // Handle response from backend
                 console.log(data);
                 // Store token in cookie
-                Cookies.set('token', data.token);
+                Cookies.set('token', data.token, { expires: 1 / 24 });
                 if (data.token !== undefined) {
                     window.location.href = '/';
                 }

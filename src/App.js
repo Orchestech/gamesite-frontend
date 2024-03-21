@@ -7,7 +7,8 @@ import LogInComponent from './components/LogInComponent.js';
 import SignUpComponent from './components/SignUpComponent.js';
 import PasswordResetComponent from './components/PasswordResetComponent.js';
 import PrivateOfficeComponent from './components/PrivateOfficeComponent.js';
-import NotFound from './components/NotFound.js';
+import NotFoundComponent from './components/NotFoundComponent.js';
+import EmailActivationComponent from './components/EmailActivationComponent.js';
 
 function App() {
   return (
@@ -20,7 +21,8 @@ function App() {
             <Route path="/sign_up" element={<SignUpComponent />} />
             <Route path="/password_reset" element={<PasswordResetComponent />} />
             <Route path="/private_office" element={<PrivateOfficeComponent />} />
-            <Route path="*" element={<NotFound />} />
+            <Route path="/email_activation" element={<EmailActivationComponent />} />
+            <Route path="*" element={<NotFoundComponent />} />
           </Routes>
           <FooterComponent />
       </Router>

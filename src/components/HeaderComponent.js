@@ -3,9 +3,32 @@ import '../css/HeaderComponent.css';
 import { Link } from 'react-router-dom';
 import * as Images from './image';
 import { useLocation } from 'react-router-dom';
+import Cookies from 'js-cookie';
+
+const { REACT_APP_APIURL } = process.env;
+
 
 function checkCookies() {
-  return document.cookie !== 'undefined' && document.cookie !== '';
+  fetch(`${REACT_APP_APIURL}/api/account/status`, {
+      method: 'GET',
+  })
+  .then(response => response.json())
+  .then(data => {
+      console.log(data);
+      if (data.message === 'Logged in') {
+        return true;
+      } else {
+        return false;
+      }
+  })
+  .catch(error => {
+      // Handle error
+      console.error(error);
+  });
+
+  
+
+  return ;
 }
 
 function HeaderComponent() {

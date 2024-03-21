@@ -77,7 +77,7 @@ function Courusel () {
                 <div className='slide'>
                     <img src={Images.Spirit5} className={"img_pixel"} alt='' height={isMobile ? '300px' : '400px'} />
                     <h3>Неминуемый</h3>
-                    <p>Постарайся внимательно вглядываться в тьму</p>
+                    <p>Постарайся внимательно вглядываться во тьму</p>
                     <p>Подобных созданий ты сможешь заметить только вблизи</p>
                 </div>
             </Slide>

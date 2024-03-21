@@ -1,0 +1,13 @@
+.email_activation {
+    background: black;
+    color: #ffffff;
+    min-height: calc(100vh - 251px);
+    height: auto;
+}
+
+.email_activation * {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
