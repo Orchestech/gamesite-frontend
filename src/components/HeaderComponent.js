@@ -11,6 +11,7 @@ const { REACT_APP_APIURL } = process.env;
 function checkCookies() {
   fetch(`${REACT_APP_APIURL}/api/account/status`, {
       method: 'GET',
+      headers: { 'token': `${Cookies.get('token')}` }
   })
   .then(response => response.json())
   .then(data => {
