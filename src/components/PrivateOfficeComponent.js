@@ -16,7 +16,7 @@ const PrivateOfficeComponent = () => {
     const [editProfile, setEditProfile] = useState(false); // Add state for editing profile
     const [savedProfile, setSavedProfile] = useState(false); // Add state for saved profile
     const [savedPassword, setSavedPassword] = useState(false);
-    const [oldPassword, setOldPassword] = useState(false);
+    const [oldPassword, setOldPassword] = useState();
     const [betaAccess, setbetaAccess] = useState(false);  
     const [verification, setVerification] = useState(true);
 
