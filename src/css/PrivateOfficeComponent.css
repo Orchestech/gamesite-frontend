@@ -49,3 +49,10 @@
 .css-1sqnrkk-MuiInputBase-input-MuiOutlinedInput-input.Mui-disabled {
     -webkit-text-fill-color: rgba(190, 173, 173, 0.595) !important;
 }
+
+.logout_button {
+    display: inline-block;
+    font-size: 12px;
+    padding: 0 4px;
+    cursor: pointer;
+}

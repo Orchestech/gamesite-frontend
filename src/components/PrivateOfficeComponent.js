@@ -124,6 +124,10 @@ const PrivateOfficeComponent = () => {
 
     }
 
+    function handleLogout() {
+        Cookies.remove('token');
+    }
+
     function toggleForm() {
         setShowForm(!showForm); // Toggle the showForm state
     }
@@ -242,6 +246,12 @@ const PrivateOfficeComponent = () => {
                                 Edit Profile
                             </Button>
                         )}
+
+                        <p>
+                            <a href='/' onClick={handleLogout} className='logout_button'>
+                                Выйти из аккаунта
+                            </a>
+                        </p>
                     </form>
                 </div>
                 <div className='private_office'>
