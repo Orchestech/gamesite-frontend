@@ -287,7 +287,7 @@ const PrivateOfficeComponent = () => {
                             sx={{ backgroundColor: '#58363d', color: 'white', paddingX: 10, marginBottom: 3}}
                             disabled={savedPassword} // Disable the button when savedProfile is true
                         >
-                            {savedPassword ? 'Password Saved' && resetPassword() : 'Save Password'}
+                            {savedPassword ? 'Password Saved' : 'Save Password'}
                         </Button>
                         {savedPassword && resetPassword()}
                     </form>
