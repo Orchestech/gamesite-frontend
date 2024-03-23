@@ -66,6 +66,29 @@ const PrivateOfficeComponent = () => {
         })
     }
 
+    function resetPassword() {
+        const password_reset = {
+            old_password: oldPassword,
+            new_password: password
+        };
+    
+        // Send data to the server
+        const baseUrl = `${REACT_APP_APIURL}/api/account/changePassword`;
+        const queryString = new URLSearchParams(password_reset).toString();
+        const url = `${baseUrl}?${queryString}`;
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'token': `${Cookies.get('token')}`
+            }
+        })
+        .then(response => response.json())
+        .then(password_reset => {
+            // Handle the response from the server
+            console.log(password_reset);
+        })
+    }
+
     const inputStyles = {
         mb: 3,
         '& .MuiOutlinedInput-root': {
@@ -234,8 +257,8 @@ const PrivateOfficeComponent = () => {
                             variant='outlined'
                             color='warning'
                             label="Old Password"
-                            onChange={e => setPassword(e.target.value)}
-                            value={password}
+                            onChange={e => setOldPassword(e.target.value)}
+                            value={oldPassword}
                             required
                             fullWidth
                             sx={inputStyles}
@@ -247,15 +270,16 @@ const PrivateOfficeComponent = () => {
                             variant='outlined'
                             color='warning'
                             label="New password"
-                            onChange={e => setOldPassword(e.target.value)}
-                            value={oldPassword}
+                            onChange={e => setPassword(e.target.value)}
+                            value={password}
                             required
                             fullWidth
                             sx={inputStyles}
                             InputLabelProps={labelStyles}
                             InputProps={inputPropsStyles}
                         />
-                        <Button type='submit'
+                        <Button
+                            type='submit'
                             variant='contained'
                             className='log_in_button'
                             color='warning'
@@ -263,8 +287,9 @@ const PrivateOfficeComponent = () => {
                             sx={{ backgroundColor: '#58363d', color: 'white', paddingX: 10, marginBottom: 3}}
                             disabled={savedPassword} // Disable the button when savedProfile is true
                         >
-                            {savedPassword ? 'Password Saved' : 'Save Password'}
+                            {savedPassword ? 'Password Saved' && resetPassword() : 'Save Password'}
                         </Button>
+                        {savedPassword && resetPassword()}
                     </form>
                 )}
             </div>

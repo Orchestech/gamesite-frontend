@@ -13,7 +13,9 @@ function MainComponent() {
                     <div className='container'>
                         <div className='main-block__gif'>
                             <h1>WRAITH WRANGLER</h1>
-                            <a href=''>Играть</a>
+                            <Link to='sign_up' className=''>
+                                Играть
+                            </Link>
                         </div>
                     </div>
                 </article>
