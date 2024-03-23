@@ -144,14 +144,14 @@ const PrivateOfficeComponent = () => {
         <div className='private_office_container'>
             <div className='container'>
                 <div className='private_office'>
-                    <h2 className='private_office_title'>Private office</h2>
+                    <h2 className='private_office_title'>Личный кабинет</h2>
                     <form onSubmit={handleSubmit}>
                         <Stack spacing={2} direction="row" sx={{marginBottom: 3}}>
                             <TextField
                                 type="text"
                                 variant='outlined'
                                 color='warning'
-                                label="First Name"
+                                label="Имя"
                                 onChange={e => setFirstName(e.target.value)}
                                 value={firstName}
                                 fullWidth
@@ -165,7 +165,7 @@ const PrivateOfficeComponent = () => {
                                 type="text"
                                 variant='outlined'
                                 color='warning'
-                                label="Last Name"
+                                label="Фамилия"
                                 onChange={e => setLastName(e.target.value)}
                                 value={lastName}
                                 fullWidth
@@ -180,7 +180,7 @@ const PrivateOfficeComponent = () => {
                             type="email"
                             variant='outlined'
                             color='warning'
-                            label="Email"
+                            label="Почта"
                             onChange={e => setEmail(e.target.value)}
                             value={email}
                             fullWidth
@@ -195,7 +195,7 @@ const PrivateOfficeComponent = () => {
                             rows={2}
                             variant='outlined'
                             color='warning'
-                            label="Resume"
+                            label="Резюме"
                             onChange={e => setResume(e.target.value)}
                             value={resume}
                             required
@@ -215,7 +215,7 @@ const PrivateOfficeComponent = () => {
                                     sx={{ backgroundColor: '#58363d', color: 'white', paddingX: 10, marginBottom: 3}}
                                     disabled={true} // Disable the button when savedProfile is true
                                 >
-                                    Profile Saved
+                                    Данный профиля сохранены
                                 </Button>
                             ) : (
                                 <Button
@@ -231,7 +231,7 @@ const PrivateOfficeComponent = () => {
                                         toggleEditProfile();
                                     }}
                                 >
-                                    Save profile
+                                    Сохранить данные
                                 </Button>
                             )
                         ) : (
@@ -243,7 +243,7 @@ const PrivateOfficeComponent = () => {
                                 sx={{ backgroundColor: '#58363d', color: 'white', paddingX: 10, marginBottom: 3}}
                                 onClick={toggleEditProfile}
                             >
-                                Edit Profile
+                                Изменить данные
                             </Button>
                         )}
 
@@ -255,18 +255,18 @@ const PrivateOfficeComponent = () => {
                     </form>
                 </div>
                 <div className='private_office'>
-                    <h2 className='beta_title'>Beta test</h2>
-                    <p><span className='beta_status'>Your status: </span>You in line now</p>
+                    <h2 className='beta_title'>Бета тест</h2>
+                    <p><span className='beta_status'>Твой статус: </span>Ты в очереди</p>
                     {betaAccess && <p className='download_link'>Your link</p>}
                 </div>
-                <span onClick={toggleForm} className='new_password_button'>New password?</span> 
+                <span onClick={toggleForm} className='new_password_button'>Новый пароль?</span> 
                 {showForm && ( // Conditionally render the form based on the showForm state
                     <form onSubmit={handleSubmit}>
                         <TextField
                             type="password"
                             variant='outlined'
                             color='warning'
-                            label="Old Password"
+                            label="Стаый пароль"
                             onChange={e => setOldPassword(e.target.value)}
                             value={oldPassword}
                             required
@@ -279,7 +279,7 @@ const PrivateOfficeComponent = () => {
                             type="password"
                             variant='outlined'
                             color='warning'
-                            label="New password"
+                            label="Новый пароль"
                             onChange={e => setPassword(e.target.value)}
                             value={password}
                             required
@@ -297,7 +297,7 @@ const PrivateOfficeComponent = () => {
                             sx={{ backgroundColor: '#58363d', color: 'white', paddingX: 10, marginBottom: 3}}
                             disabled={savedPassword} // Disable the button when savedProfile is true
                         >
-                            {savedPassword ? 'Password Saved' : 'Save Password'}
+                            {savedPassword ? 'Пароль сохранен' : 'Сохранить пароль'}
                         </Button>
                         {savedPassword && resetPassword()}
                     </form>

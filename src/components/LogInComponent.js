@@ -16,7 +16,7 @@ const LogInComponent = () => {
         event.preventDefault();
         setEmailError(false);
         setPasswordError(false);
-    
+
         if (email === '') {
             setEmailError(true);
             event.preventDefault();
@@ -25,6 +25,15 @@ const LogInComponent = () => {
             setPasswordError(true);
             event.preventDefault();
         }
+        if (!validateEmail(email)) {
+            setEmailError(true);
+            event.preventDefault();
+        }
+        if (password.length < 8) {
+            setPasswordError(true);
+            event.preventDefault();
+        }
+
         const data = {
             username: email,
             password: password
@@ -45,6 +54,8 @@ const LogInComponent = () => {
                 Cookies.set('token', data.token, { expires: 1 / 24 });
                 if (data.token !== undefined) {
                     window.location.href = '/';
+                } else {
+                    alert('Не верный логин или пароль!');
                 }
             })
             .catch(error => {
@@ -56,14 +67,20 @@ const LogInComponent = () => {
         }
     }
 
+    const validateEmail = (email) => {
+        // Email validation logic here
+        // Return true if email is valid, false otherwise
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
     return (
         <div className='log_in_container'>
             <div className='log_in'>
-                <h2>Log In Form</h2>
-                
+                <h2>Форма входа</h2>
+
                 <form autoComplete='off' onSubmit={handleSubmit}>
-                    <TextField 
-                        label="Email"
+                    <TextField
+                        label="Почта"
                         onChange={e => setEmail(e.target.value)}
                         variant="outlined"
                         color="warning"
@@ -98,7 +115,7 @@ const LogInComponent = () => {
                         className={emailError ? 'error' : ''}
                     />
                     <TextField
-                        label="Password"
+                        label="Пароль"
                         onChange={e => setPassword(e.target.value)}
                         required
                         variant="outlined"
@@ -133,18 +150,18 @@ const LogInComponent = () => {
                             },
                         }}
                     />
+
                     <Button
-                    on
                         type='submit'
                         variant='contained'
                         className='log_in_button'
                         color='warning'
-                        sx={{ backgroundColor: '#58363d', color: 'white', paddingX: 10, marginBottom: 3}} // Change the background color and text color here
+                        sx={{ backgroundColor: '#58363d', color: 'white', paddingX: 10, marginBottom: 3 }} // Change the background color and text color here
                     >
-                        Log In
+                        Войти
                     </Button>
                 </form>
-                <small>Need an account? <Link to="/sign_up"> <span className='register_link'>Register here</span></Link></small>
+                <small>Нет аккаунта? <Link to="/sign_up"> <span className='register_link'>Регестрируйся</span></Link></small>
             </div>
         </div>
     );

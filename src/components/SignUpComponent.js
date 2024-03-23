@@ -29,7 +29,15 @@ const SignUpComponent = () => {
         fetch(url, {
             method: 'POST',
         })
-            .then(response => response.json())
+            .then(response => {
+                if (response.status === 409) {
+                    alert('Эта почта уже зарегестрирована!');
+                }
+                if (response.status === 400) {
+                    alert('Неверные данные!');
+                }
+                return response.json();
+            })
             .then(data => {
                 // Handle response from backend
                 console.log(data);
@@ -76,14 +84,14 @@ const SignUpComponent = () => {
     return (
         <div className='sign_up_container'>
             <div className='sign_up'>
-                <h2>Register Form</h2>
+                <h2>Форма регистрации</h2>
                 <form onSubmit={handleSubmit}>
                     <Stack spacing={2} direction="row" sx={{marginBottom: 3}}>
                         <TextField
                             type="text"
                             variant='outlined'
                             color='warning'
-                            label="First Name"
+                            label="Имя"
                             onChange={e => setFirstName(e.target.value)}
                             value={firstName}
                             fullWidth
@@ -96,7 +104,7 @@ const SignUpComponent = () => {
                             type="text"
                             variant='outlined'
                             color='warning'
-                            label="Last Name"
+                            label="Фамилия"
                             onChange={e => setLastName(e.target.value)}
                             value={lastName}
                             fullWidth
@@ -110,7 +118,7 @@ const SignUpComponent = () => {
                         type="email"
                         variant='outlined'
                         color='warning'
-                        label="Email"
+                        label="Почта"
                         onChange={e => setEmail(e.target.value)}
                         value={email}
                         fullWidth
@@ -123,7 +131,7 @@ const SignUpComponent = () => {
                         type="password"
                         variant='outlined'
                         color='warning'
-                        label="Password"
+                        label="Пароль"
                         onChange={e => setPassword(e.target.value)}
                         value={password}
                         required
@@ -137,7 +145,7 @@ const SignUpComponent = () => {
                         rows={2}
                         variant='outlined'
                         color='warning'
-                        label="Resume"
+                        label="Резюме"
                         onChange={e => setResume(e.target.value)}
                         value={resume}
                         required
@@ -150,9 +158,9 @@ const SignUpComponent = () => {
                         variant='contained'
                         className='log_in_button'
                         color='warning'
-                        sx={{ backgroundColor: '#58363d', color: 'white', paddingX: 10, marginBottom: 3}}>Register</Button>
+                        sx={{ backgroundColor: '#58363d', color: 'white', paddingX: 10, marginBottom: 3}}>Зарегестрироваться</Button>
                 </form>
-                <small>Already have an account? <Link to="/log_in" className='register_link'>Login Here</Link></small>
+                <small>Уже есть аккаунт? <Link to="/log_in" className='register_link'>Войти</Link></small>
             </div>
         </div>
     )
